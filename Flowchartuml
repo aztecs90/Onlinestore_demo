@@ -1,0 +1,39 @@
+@startuml
+
+start
+
+:User Registration & Authentication;
+if (Registered User?) then (yes)
+  :User Login;
+else (no)
+  :User Registration;
+endif
+
+:Browse Products;
+
+while (Selecting Products) is (true)
+  :Add to Shopping Cart;
+  :Continue Shopping?;
+endwhile (no)
+
+:View Shopping Cart;
+if (Cart Empty?) then (yes)
+  stop
+else (no)
+  :Proceed to Checkout;
+endif
+
+:Enter Shipping Details;
+:Select Shipping Method;
+:Make Payment;
+:Place Order;
+
+if (Order Successful?) then (yes)
+  :Order Confirmation;
+else (no)
+  :Display Error Message;
+endif
+
+stop
+
+@enduml
